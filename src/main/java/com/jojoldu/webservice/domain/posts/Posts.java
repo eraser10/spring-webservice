@@ -1,16 +1,18 @@
 package com.jojoldu.webservice.domain.posts;
 
-//import com.jojoldu.webservice.domain.BaseTimeEntity;
 import com.jojoldu.webservice.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+/**
+ * Created by jojoldu@gmail.com on 2017. 12. 23.
+ * Blog : http://jojoldu.tistory.com
+ * Github : https://github.com/jojoldu
+ */
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -18,7 +20,7 @@ import javax.persistence.Id;
 public class Posts extends BaseTimeEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 500, nullable = false)
